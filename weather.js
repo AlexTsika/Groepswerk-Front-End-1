@@ -12,5 +12,5 @@ if (session == null) {
     document.getElementById('bYear').innerHTML = local.bYear
 };
 // data fetch API
-let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/retrievebulkdataset?&key=D2PZH6RCQKWJMW248AG7Z88QP&taskId=93ee2214c1ace79d7dfc0fae38b5b5ae&zip=false'
+let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json'
 // fetch(url).then
