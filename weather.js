@@ -11,8 +11,12 @@ if (session == null) {
     document.getElementById('name').innerHTML = local.name
     document.getElementById('bYear').innerHTML = local.bYear
 };
+if (local == null) {
+    document.getElementById('name').innerHTML = session.name
+    document.getElementById('bYear').innerHTML = session.bYear
+};
 // data fetch API
-let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json'
+let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/genk%20belgie?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json'
 // fetch(url).then
     fetch(url)
            .then(response => response.json())
