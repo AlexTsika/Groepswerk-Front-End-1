@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>The Incognito's</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,14 +16,24 @@
     <link rel="stylesheet" href="custom.css">
 </head>
 
-<body>
+<body class="bg-dark text-white">
 
 <header>
 <!-- place navbar here -->
 </header>
 
 <main>
-
+<div class="container m-5">
+    <div class="row">
+        <div class="col">
+            <p><input type="text" name="name" id="name" placeholder="What is your name?"></p>
+            <p>What is your birthday? <input type="date" name="bDate" id="bDate"></p>
+            <p><input type="text" name="location" id="location" placeholder="What is your location?"></p>
+            <p class="mb-0">Remember me <input type="checkbox" id="rememberMe"></p>
+            <button type="button" class="btn btn-secondary" id="submitButton">Send!</button>
+        </div>
+    </div>
+</div>
 </main>
 
 <footer>
