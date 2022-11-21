@@ -12,7 +12,7 @@ if (session == null) {
     document.getElementById('bYear').innerHTML = local.bYear
 };
 // data fetch API
-let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json'
+let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+local.location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json";
 // fetch(url).then
     fetch(url)
            .then(response => response.json())
