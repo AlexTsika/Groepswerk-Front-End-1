@@ -16,7 +16,7 @@ if (local == null) {
     document.getElementById('bYear').innerHTML = session.bYear
 };
 // data fetch API
-let url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/genk%20belgie?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json'
+let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/genk%20belocal.lgie?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json";
 // fetch(url).then
     fetch(url)
            .then(response => response.json())
