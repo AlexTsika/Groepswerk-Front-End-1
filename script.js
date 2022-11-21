@@ -4,13 +4,16 @@ let submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function () {
     let name = document.getElementById('name').value;
     let bDate = document.getElementById('bDate').value;
+    let bDateObject = new Date(bDate);
+    let bYear = bDateObject.getFullYear();
     let location = document.getElementById('location').value;
     let checkbox = document.getElementById('rememberMe').checked;
-    console.log(name, bDate, location, checkbox);
+    console.log(name, bDate, bYear, location, checkbox);
     // create new object to send to server
     let infoObject = {
         name: name,
         bDate: bDate,
+        bYear: bYear,
         location: location,
         rememberMe: checkbox
     };
