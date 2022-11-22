@@ -7,26 +7,17 @@ submitButton.addEventListener('click', function () {
     let bDateObject = new Date(bDate);
     let bYear = bDateObject.getFullYear();
     let location = document.getElementById('location').value;
-    let checkbox = document.getElementById('rememberMe').checked;
-    console.log(name, bDate, bYear, location, checkbox);
+    console.log(name, bDate, bYear, location);
     // create new object to send to server
     let infoObject = {
         name: name,
         bDate: bDate,
         bYear: bYear,
         location: location,
-        rememberMe: checkbox
     };
     console.log(infoObject);
-    // doorverwijzing
-    if (checkbox) {
-        // if checkbox is checked, save infoObject to local storage
-        localStorage.setItem('infoObject', JSON.stringify(infoObject));
-        // redirect to weather.html page
-        window.location.href = 'weather.html';
-    } else {
-        sessionStorage.setItem('infoObject', JSON.stringify(infoObject));
-        // redirect to weather.html page
-        window.location.href = 'weather.html';
-    }
+    // save infoObject to local storage
+    localStorage.setItem('infoObject', JSON.stringify(infoObject));
+    // redirect to weather.html page
+    window.location.href = 'weather.html';
 });

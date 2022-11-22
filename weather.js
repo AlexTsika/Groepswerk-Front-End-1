@@ -1,16 +1,13 @@
 let local = JSON.parse(localStorage.getItem('infoObject'));
-let session = JSON.parse(sessionStorage.getItem('infoObject'));
 // check if infoObject exists in local storage
-if (local == null && session == null) {
+if (local == null) {
     // if not redirect to login page
     window.location.href = 'login.html';
 };
-console.log(local, session)
+console.log(local)
 // show name and bYear on page
-if (session == null) {
-    document.getElementById('name').innerHTML = local.name
-    document.getElementById('bYear').innerHTML = local.bYear
-};
+document.getElementById('name').innerHTML = local.name
+document.getElementById('bYear').innerHTML = local.bYear
 // zodiac arrays
 let zodiacArrayObject = {
     0: 'monkey',
