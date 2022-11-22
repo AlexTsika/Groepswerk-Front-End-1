@@ -8,6 +8,6 @@ The user can input his name, birthday and location. Afterwards the temperature, 
 
 Who maintains and contributes to the project:
 
-Alexandros Tsikakis, GitHub usernames: AlexTsika
+Alexandros Tsikakis, GitHub username: AlexTsika
 
 Remco Duckers, GitHub username: rem3600
