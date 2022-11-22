@@ -25,32 +25,32 @@
 <main>
     <!-- weather info -->
 <div class="container m-5">
-    <div class="row mb-3 bg-secondary p-2" id="weather">
-        <div class="col">
+    <div class="row mb-3 p-2" id="weather">
+        <div class="col-auto">
             <p id="location" class="mb-0">location</p>
             <p><span id="localTemp"></span>°</p>
-            <img src="images/sunny.gif" alt="" id="weatherImage" class="customImage">
+            <img src="images/sunny.gif" alt="" id="weatherImage" class="customImage img-fluid">
         </div>
         <div class="col">
-            <p id="weatherConditions">Weather Report Weather Report Weather Report Weather Report Weather Report Weather Report</p>
+            <p id="weatherConditions" class="mt-5 p-3 text-center">Weather Report</p>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-primary" id="refreshButton">Refresh!</button>
+            <button type="button" class="btn btn-secondary mt-5 p-3 rounded-pill text-dark" id="refreshButton">Refresh!</button>
         </div>
     </div>
     <!-- name and date -->
-    <div class="row mb-3 bg-secondary p-2" id="nameDate">
+    <div class="row mb-3 p-2" id="nameDate">
         <div class="col">
-            <p>Welcome <span id="name">Alex</span> (<span id="bYear">1989</span>)</p>
+            <p class="text-center p-3 mt-1 bg-secondary rounded text-dark">Welcome <span id="name">Alex</span> (<span id="bYear">1989</span>)</p>
         </div>
     </div>
     <!-- horoscope and quote -->
-    <div class="row mb-3 bg-secondary p-2">
+    <div class="row mb-3 p-2">
         <div class="col">
-            <img src="images/zodiac-snake.png" alt="image of a dog" id="horoscopeImage" class="horoscopeImage">
+            <img src="images/zodiac-snake.png" alt="image of a dog" id="horoscopeImage" class="horoscopeImage img-fluid">
         </div>
         <div class="col" id="horoscopeQuote">
-            <p>Quote Quote Quote Quote Quote Quote Quote Quote Quote Quote</p>
+            <p id="chineseQuotes" class="text-center p-3 mt-5 bg-dark rounded-pill">It's better to be without a book than to believe a book entirely.</p>
         </div>
     </div>
 </div>
