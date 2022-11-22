@@ -60,3 +60,6 @@ function parseData(data){
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
 };
 retrieveData();
+document.getElementById('refreshButton').addEventListener('click', function(){
+    retrieveData();
+});
