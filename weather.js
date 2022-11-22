@@ -86,11 +86,11 @@ let chineseQuotesArray = [
     "There are two kinds of perfect people: those who are dead, and those who have not been born yet."
 ];
 
-function getRandomQuote(chineseQuotesArray[]) {
-    return chineseQuotesArray[Math.floor(Math.random() * chineseQuotesArray.length)]; 
-}
+function getRandomQuote(chineseQuotesArray) {
+    return chineseQuotesArray[Math.floor(Math.random()*chineseQuotesArray.length)]; 
+};
 console.log(getRandomQuote(chineseQuotesArray));
-
+document.getElementById('chineseQuote').innerHTML = getRandomQuote(chineseQuotesArray);
 
 
 retrieveData();
