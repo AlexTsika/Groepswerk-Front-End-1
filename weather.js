@@ -23,23 +23,20 @@ let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/ser
 
 // zodiac arrays
 
-let rat; let ox; let tiger; let rabbit; let dragon; let snake; let horse; let sheep; let monkey; let roosteer; let dog; let pig;
-
-
 let zodiacArrayObject = {
-    rat: [1924, 1936, 1948, 1960, 1972, 1984, 1996, 2008, 2020, 2032], 
-    ox: [1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021, 2033], 
-    tiger: [1926, 1938, 1950, 1962, 1974, 1986, 1998, 2010, 2022, 2034], 
-    rabbit: [1927, 1939, 1951, 1963, 1975, 1987, 1999, 2011, 2023, 2035], 
-    dragon: [1928, 1940, 1952, 1964, 1976, 1988, 2000, 2012, 2024, 2036], 
-    snake: [1929, 1941, 1953, 1965, 1977, 1989, 2001, 2013, 2025, 2037], 
-    horse: [1930, 1942, 1954, 1966, 1978, 1990, 2002, 2014, 2026, 2038], 
-    sheep: [1931, 1943, 1955, 1967, 1979, 1991, 2003, 2015, 2027, 2039], 
-    monkey: [1932, 1944, 1956, 1968, 1980, 1992, 2004, 2016, 2028, 2040], 
-    rooster: [1933, 1945, 1957, 1969, 1981, 1993, 2005, 2017, 2029, 2041], 
-    dog: [1934, 1946, 1958, 1970, 1982, 1994, 2006, 2018, 2030, 2042], 
-    pig: [1935, 1947, 1959, 1971, 1983, 1995, 2007, 2019, 2031, 2043]
-};
+    0 : 'monkey', 
+    1 : 'rooster', 
+    2 : 'dog', 
+    3 : 'pig',
+    4 : 'rat',
+    5 : 'ox',
+    6 : 'tiger',
+    7 : 'rabbit',
+    8 : 'dragon',
+    9 : 'snake',
+    10 : 'horse',
+    11 : 'sheep',
+}
 
 // zodiac calculaiotn function
 function zodiacCalculator() {
