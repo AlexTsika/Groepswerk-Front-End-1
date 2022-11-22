@@ -4,25 +4,26 @@ let session = JSON.parse(sessionStorage.getItem('infoObject'));
 if (local == null && session == null) {
     // if not redirect to login page
     window.location.href = 'login.html';
-}
+};
 console.log(local, session)
 // show name and bYear on page
 if (session == null) {
     document.getElementById('name').innerHTML = local.name
     document.getElementById('bYear').innerHTML = local.bYear
 };
-// data fetch API
-let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+local.location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json";
-// fetch(url).then
+// retrieve data function
+function retrieveData(){
+    // data fetch API
+    let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"+local.location+"?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json";
+    // fetch(url).then
     fetch(url)
            .then(response => response.json())
            .then(data => {
-                console.log(data)
-           });               
-
-
+                parseData(data);
+                zodiacRenderer(local.bYear);
+           });
+};
 // zodiac arrays
-
 let zodiacArrayObject = {
     0 : 'monkey', 
     1 : 'rooster', 
@@ -36,8 +37,7 @@ let zodiacArrayObject = {
     9 : 'snake',
     10 : 'horse',
     11 : 'sheep',
-}
-
+};
 // function zodiacRenderer to decide the year and get the right image
 function zodiacRenderer(year) {
     let zodiac = zodiacArrayObject[parseInt(year) %12];
@@ -45,4 +45,14 @@ function zodiacRenderer(year) {
     let img = `images/zodiac-${zodiac}.png`;
     document.getElementById('zodiacImage').setAttribute('src', img);
     document.getElementById('zodiacImage').setAttribute('title', zodiac);
+};
+// parse data from API
+function parseData(data){
+    document.getElementById('location').innerHTML = data.resolvedAddress;
+    let temperature = data.currentConditions.temp;
+    document.getElementById('').innerHTML = temperature;
+    let conditions = data.currentConditions.conditions;
+    let icon = data.currentConditions.icon;
+    console.log(temperature, conditions, icon)
 }
+retrieveData();
