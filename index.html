@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="custom.css">
 </head>
 
-<body class="bg-dark text-white">
+<body class="bg-info text-dark">
 
 <header>
 <!-- place navbar here -->
 </header>
 
 <main>
-<div class="container m-5">
+<div class="container-fluid mt-5">
     <div class="row">
-        <div class="col">
+        <div class="col m-5 text-center">
             <p><input type="text" name="name" id="name" placeholder="What is your name?"></p>
-            <p>What is your birthday? <input type="date" name="bDate" id="bDate"></p>
+            <p class="fw-bold">What is your birthday? <input type="date" name="bDate" id="bDate"></p>
             <p><input type="text" name="location" id="location" placeholder="What is your location?"></p>
-            <p class="mb-0">Remember me <input type="checkbox" id="rememberMe"></p>
-            <button type="button" class="btn btn-secondary" id="submitButton">Submit!</button>
+            <p class="mb-1 fw-bold">Remember me <input type="checkbox" id="rememberMe"></p>
+            <button type="button" class="btn btn-light border border-dark border-2 fw-bold" id="submitButton">Submit!</button>
         </div>
     </div>
 </div>
