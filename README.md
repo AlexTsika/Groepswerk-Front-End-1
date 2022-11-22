@@ -18,8 +18,6 @@ Markdown:
 
 ## 9.4 °
 
-![](/images/cloudy.svg)
-
 #### Overcast
 
 # Welcome Alexandros Tsikakis ! ( 1989 )
