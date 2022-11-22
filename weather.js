@@ -29,6 +29,7 @@ function zodiacRenderer(year) {
     // set zodiac image
     let zodiacImg = `images/zodiac-${zodiac}.png`;
     document.getElementById('zodiacImage').setAttribute('src', zodiacImg);
+    document.getElementById('animalSign').innerHTML = zodiac;
 };
 // show zodiac sign
 zodiacRenderer(local.bYear);
