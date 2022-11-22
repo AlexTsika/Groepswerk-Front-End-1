@@ -56,7 +56,7 @@ function parseData(data){
     let icon = data.currentConditions.icon;
     console.log(temperature, conditions, icon)
     // set weather image
-    let weatherImg = `images/${icon}.gif`;
+    let weatherImg = `images/${icon}.svg`;
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
 };
 retrieveData();

@@ -1,8 +1,4 @@
-.horoscopeImage {
+.customImage {
     width: 250px;
-    height: auto;
-};
-.weatherImg {
-    width: 250px !important;
     height: auto;
 };
