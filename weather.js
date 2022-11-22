@@ -11,18 +11,6 @@ if (session == null) {
     document.getElementById('name').innerHTML = local.name
     document.getElementById('bYear').innerHTML = local.bYear
 };
-// retrieve data function
-function retrieveData() {
-    // data fetch API
-    let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local.location + "?unitGroup=metric&include=current&key=P9J7ZGZ9SBGSZQTDBMT86WNN3&contentType=json";
-    // fetch(url).then
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            parseData(data);
-            zodiacRenderer(local.bYear);
-        });
-};
 // zodiac arrays
 let zodiacArrayObject = {
     0: 'monkey',
@@ -39,28 +27,15 @@ let zodiacArrayObject = {
     11: 'sheep',
 };
 // function zodiacRenderer to decide the year and get the right image
-function zodiacRenderer(bYear) {
-    let zodiac = zodiacArrayObject[parseInt(bYear) % 12];
+function zodiacRenderer(year) {
+    let zodiac = zodiacArrayObject[parseInt(year) % 12];
     // set zodiac image
     let zodiacImg = `images/zodiac-${zodiac}.png`;
     document.getElementById('zodiacImage').setAttribute('src', zodiacImg);
 };
-// parse data from API
-function parseData(data) {
-    document.getElementById('location').innerHTML = data.resolvedAddress;
-    let temperature = data.currentConditions.temp;
-    document.getElementById('localTemp').innerHTML = temperature;
-    let conditions = data.currentConditions.conditions;
-    // set weather conditions
-    document.getElementById('weatherConditions').innerHTML = conditions;
-    let icon = data.currentConditions.icon;
-    console.log(temperature, conditions, icon)
-    // set weather image
-    let weatherImg = `images/${icon}.svg`;
-    document.getElementById('weatherImage').setAttribute('src', weatherImg);
-};
-
-// array with chinese sayings
+// show zodiac sign
+zodiacRenderer(local.bYear);
+// array with chinese quotes
 let chineseQuotesArray = [
     "Do not fear going forward slowly; fear only to stand still.",
     "If you want happiness for a lifetime, help someone else.",
@@ -85,15 +60,41 @@ let chineseQuotesArray = [
     "If you want to find out about the road ahead, then ask about it from those coming back.",
     "There are two kinds of perfect people: those who are dead, and those who have not been born yet."
 ];
-
+// show quote
 function getRandomQuote(chineseQuotesArray) {
     return chineseQuotesArray[Math.floor(Math.random() * chineseQuotesArray.length)]; 
 }
 console.log(getRandomQuote(chineseQuotesArray));
 document.getElementById('chineseQuotes').innerHTML = getRandomQuote(chineseQuotesArray);
 
+// retrieve data function
+function retrieveData() {
+    // data fetch API
+    let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local.location + "?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json";
+    // fetch(url).then
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            parseData(data);
+        });
+};
+// parse data from API
+function parseData(data) {
+    document.getElementById('location').innerHTML = data.resolvedAddress;
+    let temperature = data.currentConditions.temp;
+    document.getElementById('localTemp').innerHTML = temperature;
+    let conditions = data.currentConditions.conditions;
+    // set weather conditions
+    document.getElementById('weatherConditions').innerHTML = conditions;
+    let icon = data.currentConditions.icon;
+    console.log(temperature, conditions, icon)
+    // set weather image
+    let weatherImg = `images/${icon}.svg`;
+    document.getElementById('weatherImage').setAttribute('src', weatherImg);
+};
 
 retrieveData();
+// refresh button
 document.getElementById('refreshButton').addEventListener('click', function () {
     retrieveData();
 });
