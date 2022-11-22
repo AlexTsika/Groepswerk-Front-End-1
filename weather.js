@@ -69,7 +69,7 @@ document.getElementById('chineseQuotes').innerHTML = getRandomQuote(chineseQuote
 
 // retrieve data function
 function retrieveData() {
-    // data fetch API with key
+    // data fetch API with key D2PZH6RCQKWJMW248AG7Z88QP
     let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local.location + "?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json";
     // fetch(url).then
     fetch(url)
