@@ -9,70 +9,75 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="custom.css">
 </head>
 
 <body class="bg-info text-dark">
 
-<header>
-<!-- place navbar here -->
-</header>
+    <header>
+        <!-- place navbar here -->
+    </header>
 
-<main>
-    <!-- weather info -->
-<div class="container-fluid mt-3">
-    <div class="row mb-3 p-2" id="weather">
-        <div class="col text-center ms-5">
-            <h4 class="mb-0"><span id="location">location</span></h4>
-            <h2 class="mt-0 mb-3"><span id="localTemp">temp in </span>°</h2>
-            <img src="" alt="" id="weatherImage" class="img-fluid">
+    <main>
+        <!-- weather info -->
+        <div class="container-fluid mt-3">
+            <div class="row mb-3 p-2" id="weather">
+                <div class="col text-center ms-5">
+                    <h4 class="mb-0"><span id="location">location</span></h4>
+                    <h2 class="mt-0 mb-3"><span id="localTemp">temp in </span>°</h2>
+                    <img src="" alt="" id="weatherImage" class="img-fluid">
+                </div>
+                <div class="col">
+                    <h4 class="text-center mt-5">Weather Conditions:</h4>
+                    <h2 class="text-center"><span id="weatherConditions">conditions</span></h2>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-light border border-dark border-2 mt-5 me-5"
+                        id="refreshButton"><span class="fw-bold">Refresh Weather!</span></button>
+                </div>
+            </div>
+            <!-- name and date -->
+            <div class="row mb-3 p-2" id="nameDate">
+                <div class="col">
+                    <h2 class="text-center p-3 m-1">Welcome <span id="name">name</span>! (<span id="bYear">year</span>)
+                    </h2>
+                </div>
+            </div>
+            <!-- horoscope and quote -->
+            <div class="row mb-3 p-2">
+                <div class="col" id="horoscopeQuote">
+                    <h4 class="text-center p-5 mt-3 ms-5 fst-italic">"<span id="chineseQuotes">quote</span>"</h4>
+                </div>
+                <div class="col text-center me-5">
+                    <img src="" alt="zodiac-image" id="zodiacImage" class="img-fluid">
+                    <!-- text under image -->
+                    <h4 class="text-center p-5 fst-bold">Your Chinese Zodiac (生肖 shēngxiào) sign</h4>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <h4 class="text-center mt-5">Weather Conditions:</h4>
-            <h2 class="text-center"><span id="weatherConditions">conditions</span></h2>
-        </div>
-        <div class="col text-center">
-            <button type="button" class="btn btn-light border border-dark border-2 mt-5 me-5" id="refreshButton"><span class="fw-bold">Refresh Weather!</span></button>
-        </div>
-    </div>
-    <!-- name and date -->
-    <div class="row mb-3 p-2" id="nameDate">
-        <div class="col">
-            <h2 class="text-center p-3 m-1">Welcome <span id="name">name</span>! (<span id="bYear">year</span>)</h2>
-        </div>
-    </div>
-    <!-- horoscope and quote -->
-    <div class="row mb-3 p-2">
-        <div class="col" id="horoscopeQuote">
-            <h4 class="text-center p-5 mt-3 ms-5 fst-italic">"<span id="chineseQuotes">quote</span>"</h4>
-        </div>
-        <div class="col text-center me-5">
-            <img src="" alt="zodiac-image" id="zodiacImage" class="img-fluid">
-        </div>
-        <!-- text under image -->
-        <h4 class="text-end p-5 fst-bold">Your Chinese Zodiac (生肖 shēngxiào) sign</h4>
+    </main>
 
-    </div>
-</div>
-</main>
-
-<footer>
-<!-- place footer here -->
-</footer>
+    <footer>
+        <!-- place footer here -->
+    </footer>
 
 </body>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
-    <!-- Custom Script here -->
-    <script src="weather.js"></script>
+<!-- Custom Script here -->
+<script src="weather.js"></script>
+
 </html>
