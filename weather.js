@@ -39,12 +39,11 @@ let zodiacArrayObject = {
     11 : 'sheep',
 };
 // function zodiacRenderer to decide the year and get the right image
-function zodiacRenderer(year) {
-    let zodiac = zodiacArrayObject[parseInt(year) %12];
+function zodiacRenderer(bYear) {
+    let zodiac = zodiacArrayObject[parseInt(bYear) %12];
     // set zodiac image
     let img = `images/zodiac-${zodiac}.png`;
     document.getElementById('zodiacImage').setAttribute('src', img);
-    document.getElementById('zodiacImage').setAttribute('title', zodiac);
 };
 // parse data from API
 function parseData(data){
@@ -52,7 +51,12 @@ function parseData(data){
     let temperature = data.currentConditions.temp;
     document.getElementById('localTemp').innerHTML = temperature;
     let conditions = data.currentConditions.conditions;
+    // set weather conditions
+    document.getElementById('weatherConditions').innerHTML = conditions;
     let icon = data.currentConditions.icon;
     console.log(temperature, conditions, icon)
-}
+    // set weather image
+    let weatherImg = `images/${icon}.gif`;
+    document.getElementById('weatherImage').setAttribute('src', weatherImg);
+};
 retrieveData();
