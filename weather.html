@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- google fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="custom.css">
 </head>
@@ -25,44 +31,45 @@
         <!-- place navbar here -->
     </header>
 
-<main>
-    <!-- weather info -->
-<div class="container-fluid mt-3">
-    <div class="row mb-3 p-2" id="weather">
-        <div class="col text-center ms-5">
-            <h4 class="mb-0"><span id="location">location</span></h4>
-            <h2 class="mt-0 mb-3"><span id="localTemp">temp in </span>°</h2>
-            <img src="" alt="" id="weatherImage" class="img-fluid">
+    <main>
+        <!-- weather info -->
+        <div class="container-fluid mt-3">
+            <div class="row mb-3 p-2" id="weather">
+                <div class="col text-center ms-5">
+                    <h4 class="mb-0"><span id="location">location</span></h4>
+                    <h2 class="mt-0 mb-3"><span id="localTemp">temp in </span>°</h2>
+                    <img src="" alt="" id="weatherImage" class="img-fluid">
+                </div>
+                <div class="col">
+                    <h4 class="text-center mt-5">Weather Conditions:</h4>
+                    <h2 class="text-center"><span id="weatherConditions">conditions</span></h2>
+                </div>
+                <div class="col text-center">
+                    <button type="button" class="btn btn-light border border-dark border-2 mt-5 me-5"
+                        id="refreshButton"><span class="fw-bold">Refresh Weather!</span></button>
+                </div>
+            </div>
+            <!-- name and date -->
+            <div class="row mb-3 p-2" id="nameDate">
+                <div class="col">
+                    <h2 class="text-center p-3 m-1">Welcome <span id="name">name</span>!</h2>
+                </div>
+            </div>
+            <!-- horoscope and quote -->
+            <div class="row mb-3 p-2">
+                <div class="col" id="horoscopeQuote">
+                    <h4 class="text-center p-5 mt-3 ms-5 fst-italic">"<span id="chineseQuotes">quote</span>"</h4>
+                </div>
+                <div class="col text-center me-5">
+                    <img src="" alt="" id="zodiacImage" class="img-fluid">
+                    <!-- text under image -->
+                    <h4 class="text-center mt-3">Your Chinese Zodiac (生肖 shēngxiào) sign</h4>
+                    <h2><span id="bYear">year</span></h2>
+                    <h3><i>The year of the <span id="animalSign"></span></i></span></h3>
+                </div>
+            </div>
         </div>
-        <div class="col">
-            <h4 class="text-center mt-5">Weather Conditions:</h4>
-            <h2 class="text-center"><span id="weatherConditions">conditions</span></h2>
-        </div>
-        <div class="col text-center">
-            <button type="button" class="btn btn-light border border-dark border-2 mt-5 me-5" id="refreshButton"><span class="fw-bold">Refresh Weather!</span></button>
-        </div>
-    </div>
-    <!-- name and date -->
-    <div class="row mb-3 p-2" id="nameDate">
-        <div class="col">
-            <h2 class="text-center p-3 m-1">Welcome <span id="name">name</span>!</h2>
-        </div>
-    </div>
-    <!-- horoscope and quote -->
-    <div class="row mb-3 p-2">
-        <div class="col" id="horoscopeQuote">
-            <h4 class="text-center p-5 mt-3 ms-5 fst-italic">"<span id="chineseQuotes">quote</span>"</h4>
-        </div>
-        <div class="col text-center me-5">
-            <img src="" alt="" id="zodiacImage" class="img-fluid">
-            <!-- text under image -->
-            <h4 class="text-center mt-3">Your Chinese Zodiac (生肖 shēngxiào) sign</h4>
-            <h2><span id="bYear">year</span></h2>
-            <h3><i>The year of the <span id="animalSign"></span></i></span></h3>
-        </div>
-    </div>
-</div>
-</main>
+    </main>
 
     <footer>
         <!-- place footer here -->
