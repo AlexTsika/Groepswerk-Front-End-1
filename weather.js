@@ -50,7 +50,7 @@ function zodiacRenderer(year) {
 function parseData(data){
     document.getElementById('location').innerHTML = data.resolvedAddress;
     let temperature = data.currentConditions.temp;
-    document.getElementById('').innerHTML = temperature;
+    document.getElementById('localTemp').innerHTML = temperature;
     let conditions = data.currentConditions.conditions;
     let icon = data.currentConditions.icon;
     console.log(temperature, conditions, icon)
