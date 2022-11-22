@@ -38,7 +38,11 @@ let zodiacArrayObject = {
     11 : 'sheep',
 }
 
-// zodiac calculaiotn function
-function zodiacCalculator() {
-    
+// function zodiacRenderer to decide the year and get the right image
+function zodiacRenderer(year) {
+    let zodiac = zodiacArrayObject[parseInt(year) %12];
+    // set zodiac image
+    let img = `images/zodiac-${zodiac}.png`;
+    document.getElementById('zodiacImage').setAttribute('src', img);
+    document.getElementById('zodiacImage').setAttribute('title', zodiac);
 }
