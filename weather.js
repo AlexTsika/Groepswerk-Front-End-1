@@ -92,10 +92,12 @@ function parseData(data) {
     let conditions = data.currentConditions.conditions;
     document.getElementById('weatherConditions').innerHTML = conditions;
     // set weather description
-    document.getElementById('weatherDescription').innerHTML = data.description;
+    let description = data.description;
+    console.log(description);
+    document.getElementById('weatherDescription').innerHTML = description;
     // retrieve icon data
     let icon = data.currentConditions.icon;
-    console.log(temperature, conditions, icon)
+    console.log(temperature, conditions, icon);
     // set weather image based on icon
     let weatherImg = `images/${icon}.svg`;
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
