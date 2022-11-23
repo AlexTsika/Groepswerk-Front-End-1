@@ -97,7 +97,7 @@ function parseData(data) {
     // convert celsius to farenheit
     let fahrenheit = Math.round(1.8 * temperature + 32);
     document.getElementById('localTempFahr').innerHTML = fahrenheit;
-    // console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
+    console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
 };
 
 
