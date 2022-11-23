@@ -78,12 +78,17 @@ function retrieveData() {
 };
 // parse data from API
 function parseData(data) {
+    // set location
     document.getElementById('location').innerHTML = data.resolvedAddress;
+    // set temperature
     let temperature = data.currentConditions.temp;
     document.getElementById('localTemp').innerHTML = temperature;
-    let conditions = data.currentConditions.conditions;
     // set weather conditions
+    let conditions = data.currentConditions.conditions;
     document.getElementById('weatherConditions').innerHTML = conditions;
+    // set weather description
+    document.getElementById('weatherDescription').innerHTML = data.description;
+    // set icon
     let icon = data.currentConditions.icon;
     console.log(temperature, conditions, icon)
     // set weather image
@@ -92,7 +97,7 @@ function parseData(data) {
     // convert celsius to farenheit
     let fahrenheit = Math.round(1.8 * temperature + 32);
     document.getElementById('localTempFahr').innerHTML = fahrenheit;
-    // console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
+    console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
 };
 
 
