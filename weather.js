@@ -1,3 +1,4 @@
+// retrieve data from local storage
 let local = JSON.parse(localStorage.getItem('infoObject'));
 // check if infoObject exists in local storage
 if (local == null) {
@@ -8,7 +9,7 @@ console.log(local)
 // show name and bYear on page
 document.getElementById('name').innerHTML = local.name
 document.getElementById('bYear').innerHTML = local.bYear
-// zodiac arrays
+// zodiac MOD arrays
 let zodiacArrayObject = {
     0: 'monkey',
     1: 'rooster',
@@ -23,7 +24,7 @@ let zodiacArrayObject = {
     10: 'horse',
     11: 'sheep',
 };
-// function zodiacRenderer to decide the year and get the right image
+// function zodiacRenderer to decide the year and set the right image
 function zodiacRenderer(year) {
     let zodiac = zodiacArrayObject[parseInt(year) % 12];
     // set zodiac image
@@ -31,7 +32,7 @@ function zodiacRenderer(year) {
     document.getElementById('zodiacImage').setAttribute('src', zodiacImg);
     document.getElementById('animalSign').innerHTML = zodiac;
 };
-// show zodiac sign
+// show zodiac and image
 zodiacRenderer(local.bYear);
 // array with chinese quotes
 let chineseQuotesArray = [
@@ -58,25 +59,25 @@ let chineseQuotesArray = [
     "If you want to find out about the road ahead, then ask about it from those coming back.",
     "There are two kinds of perfect people: those who are dead, and those who have not been born yet."
 ];
-// show quote
+// function to show quote
 function getRandomQuote(chineseQuotesArray) {
     return chineseQuotesArray[Math.floor(Math.random() * chineseQuotesArray.length)];
 }
 console.log(getRandomQuote(chineseQuotesArray));
+// show quote
 document.getElementById('chineseQuotes').innerHTML = getRandomQuote(chineseQuotesArray);
-
-// retrieve data function
+// retrieve weather data function
 function retrieveData() {
     // data fetch API with key D2PZH6RCQKWJMW248AG7Z88QP
     let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local.location + "?unitGroup=metric&key=D2PZH6RCQKWJMW248AG7Z88QP&contentType=json";
-    // fetch(url).then
+    // fetch(url).then parse weather data from API
     fetch(url)
         .then(response => response.json())
         .then(data => {
             parseData(data);
         });
 };
-// parse data from API
+// function to parse weather data from API
 function parseData(data) {
     // set location
     document.getElementById('location').innerHTML = data.resolvedAddress;
@@ -99,6 +100,7 @@ function parseData(data) {
     let weatherImg = `images/${icon}.svg`;
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
 };
+// retrieve and parse all weather data
 retrieveData();
 // refresh button
 document.getElementById('refreshButton').addEventListener('click', function () {
