@@ -2,10 +2,6 @@ body {
     font-family: 'Poppins', sans-serif;
 };
 
-#footerIcons {
-    color: #0DCAF0 !important;
-}
-
 footer { 
     box-shadow: 1px 1px 10px rgb(0, 8, 12);
 }
