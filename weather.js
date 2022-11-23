@@ -74,7 +74,10 @@ function retrieveData() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            parseData(data);
+            parseData(data).
+            catch((error) => {
+                console.error('Error:', error);
+              })
         });
 };
 // function to parse weather data from API
