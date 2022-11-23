@@ -99,9 +99,6 @@ function parseData(data) {
     document.getElementById('localTempFahr').innerHTML = fahrenheit;
     console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
 };
-
-
-
 retrieveData();
 // refresh button
 document.getElementById('refreshButton').addEventListener('click', function () {
