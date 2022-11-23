@@ -60,7 +60,7 @@ let chineseQuotesArray = [
 ];
 // show quote
 function getRandomQuote(chineseQuotesArray) {
-    return chineseQuotesArray[Math.floor(Math.random() * chineseQuotesArray.length)]; 
+    return chineseQuotesArray[Math.floor(Math.random() * chineseQuotesArray.length)];
 }
 console.log(getRandomQuote(chineseQuotesArray));
 document.getElementById('chineseQuotes').innerHTML = getRandomQuote(chineseQuotesArray);
@@ -89,7 +89,13 @@ function parseData(data) {
     // set weather image
     let weatherImg = `images/${icon}.svg`;
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
+    // convert celsius to farenheit
+    let fahrenheit = Math.round(1.8 * temperature + 32);
+    document.getElementById('localTempFahr').innerHTML = fahrenheit;
+    // console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
 };
+
+
 
 retrieveData();
 // refresh button
