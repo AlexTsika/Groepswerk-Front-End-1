@@ -83,21 +83,21 @@ function parseData(data) {
     // set temperature
     let temperature = data.currentConditions.temp;
     document.getElementById('localTemp').innerHTML = temperature;
+    // convert celsius to farenheit
+    let fahrenheit = Math.round(1.8 * temperature + 32);
+    document.getElementById('localTempFahr').innerHTML = fahrenheit;
+    console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
     // set weather conditions
     let conditions = data.currentConditions.conditions;
     document.getElementById('weatherConditions').innerHTML = conditions;
     // set weather description
     document.getElementById('weatherDescription').innerHTML = data.description;
-    // set icon
+    // retrieve icon data
     let icon = data.currentConditions.icon;
     console.log(temperature, conditions, icon)
-    // set weather image
+    // set weather image based on icon
     let weatherImg = `images/${icon}.svg`;
     document.getElementById('weatherImage').setAttribute('src', weatherImg);
-    // convert celsius to farenheit
-    let fahrenheit = Math.round(1.8 * temperature + 32);
-    document.getElementById('localTempFahr').innerHTML = fahrenheit;
-    console.log(`${temperature} Celsius = ${fahrenheit} Fahrenheit`);
 };
 retrieveData();
 // refresh button
